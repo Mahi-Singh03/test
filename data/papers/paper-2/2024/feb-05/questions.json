@@ -1,0 +1,21 @@
+{
+    "examDate": "2024-02-05",
+    "paperId": "paper-2",
+    "year": "2024",
+    "totalQuestions": 100,
+    "questions": [
+        {
+            "id": 1,
+            "question": "Sample question 1",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": 0,
+            "marks": 1,
+            "subject": "logical-reasoning"
+        }
+    ]
+}

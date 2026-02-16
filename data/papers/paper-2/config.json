@@ -1,0 +1,12 @@
+{
+    "paperId": "paper-2",
+    "paperName": "Paper 2",
+    "description": "Logical Reasoning, Digital Literacy, English Language",
+    "totalMarks": 100,
+    "duration": 120,
+    "subjects": [
+        "logical-reasoning",
+        "digital-literacy",
+        "english-language"
+    ]
+}

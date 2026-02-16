@@ -1,0 +1,12 @@
+{
+    "paperId": "paper-1",
+    "paperName": "Paper 1",
+    "description": "General Awareness, Quantitative Aptitude, Punjabi Language",
+    "totalMarks": 100,
+    "duration": 120,
+    "subjects": [
+        "general-awareness",
+        "quantitative-aptitude",
+        "punjabi-language"
+    ]
+}
