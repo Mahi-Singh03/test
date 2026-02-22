@@ -7,7 +7,15 @@ export default function NavigationButtons({ links }) {
                 <Link
                     key={index}
                     href={link.href}
-                    className="block bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-lg p-4 text-center font-semibold hover:from-blue-600 hover:to-indigo-700 transition-all shadow-md hover:shadow-lg"
+                    className="
+                        group relative flex items-center justify-center
+                        bg-[var(--accent)] text-white dark:bg-[var(--dark-accent)] dark:text-white
+                        font-semibold rounded-[40px] dark:rounded-[32px] p-4 text-center
+                        shadow-[var(--shadow-glass)] dark:shadow-[var(--shadow-glass-dark)]
+                        transition-all duration-300 ease-out
+                        hover:-translate-y-[3px] dark:hover:-translate-y-[4px] dark:hover:scale-[1.01]
+                        hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 dark:focus:ring-offset-[var(--background)] focus:ring-[var(--accent)] dark:focus:ring-[var(--dark-accent)]
+                    "
                 >
                     {link.label}
                 </Link>

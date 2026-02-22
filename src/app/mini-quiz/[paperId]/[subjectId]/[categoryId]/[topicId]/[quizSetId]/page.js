@@ -1,40 +1,55 @@
-import DummyPage from '@/components/testing/DummyPage';
+import Link from 'next/link';
+import PageShell from '@/components/layout/PageShell';
 
-export default async function MiniQuizPage({ params }) {
+export default async function MiniQuizGamePage({ params }) {
     const resolvedParams = await params;
-    console.log('MINI QUIZ PAGE - Params:', resolvedParams);
+    const setLabel = resolvedParams.quizSetId
+        ? resolvedParams.quizSetId.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
+        : 'Quiz Set';
 
     return (
-        <DummyPage
-            title="Mini Quiz (Dummy)"
-            params={resolvedParams}
+        <PageShell
+            title={setLabel}
+            subtitle="Mini Quiz"
             backLink={`/mini-quiz/${resolvedParams.paperId}/${resolvedParams.subjectId}/${resolvedParams.categoryId}/${resolvedParams.topicId}`}
+            backLabel="Quiz Sets"
         >
-            <div className="text-center py-12">
-                <div className="text-6xl mb-4">🎯</div>
-                <h2 className="text-2xl font-bold text-gray-800 mb-4">Mini Quiz Page</h2>
-                <p className="text-gray-600 mb-6">This is where the actual mini quiz would load</p>
-
-                <div className="bg-green-50 rounded-lg p-6 max-w-md mx-auto">
-                    <h3 className="font-semibold text-green-800 mb-2">Route Test Successful!</h3>
-                    <p className="text-sm text-green-700">All parameters captured correctly</p>
-                </div>
-
-                <div className="mt-8 space-y-4">
-                    <a
-                        href={`/results/mini-${resolvedParams.quizSetId}-${Date.now()}`}
-                        className="inline-block bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition mr-4"
+            {/* Coming soon card */}
+            <div style={{
+                textAlign: 'center',
+                padding: '3rem 1.5rem',
+            }} className="card">
+                <div style={{ fontSize: '3rem', marginBottom: '1.25rem' }}>🎯</div>
+                <h2 style={{
+                    fontSize: '1.25rem',
+                    fontWeight: 700,
+                    color: 'var(--text-1)',
+                    marginBottom: '0.75rem',
+                    letterSpacing: '-0.01em',
+                }}>
+                    Quiz Engine Coming Soon
+                </h2>
+                <p style={{
+                    fontSize: '0.9rem',
+                    color: 'var(--text-2)',
+                    maxWidth: '340px',
+                    margin: '0 auto 2rem',
+                    lineHeight: 1.6,
+                }}>
+                    The <strong>{setLabel}</strong> questions will load here once the quiz engine is connected.
+                </p>
+                <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                    <Link
+                        href={`/results/mini-${resolvedParams.quizSetId}-preview`}
+                        className="btn-primary"
                     >
-                        View Sample Results
-                    </a>
-                    <a
-                        href="/"
-                        className="inline-block bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 transition"
-                    >
+                        Preview Results
+                    </Link>
+                    <Link href="/" className="btn-secondary">
                         Back to Home
-                    </a>
+                    </Link>
                 </div>
             </div>
-        </DummyPage>
+        </PageShell>
     );
 }

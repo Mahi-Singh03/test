@@ -1,23 +1,41 @@
-import DummyPage from '@/components/testing/DummyPage';
-import NavigationButtons from '@/components/testing/NavigationButtons';
+import PageShell from '@/components/layout/PageShell';
+import SelectionGrid from '@/components/ui/SelectionGrid';
+
+const paperNames = {
+    'paper-1': 'Paper 1',
+    'paper-2': 'Paper 2',
+    'paper-3': 'Paper 3',
+};
 
 export default async function ExamDatesPage({ params }) {
     const resolvedParams = await params;
-    console.log('EXAM DATES PAGE - Params:', resolvedParams);
+    const paperName = paperNames[resolvedParams.paperId] || resolvedParams.paperId;
 
     const dates = [
-        { href: `/full-paper/${resolvedParams.paperId}/${resolvedParams.year}/jan-15`, label: 'January 15' },
-        { href: `/full-paper/${resolvedParams.paperId}/${resolvedParams.year}/feb-05`, label: 'February 05' }
+        {
+            href: `/full-paper/${resolvedParams.paperId}/${resolvedParams.year}/jan-15`,
+            label: 'January 15',
+            description: `${resolvedParams.year} · Morning Shift`,
+            icon: '🌅',
+            badge: '100 Questions',
+        },
+        {
+            href: `/full-paper/${resolvedParams.paperId}/${resolvedParams.year}/feb-05`,
+            label: 'February 05',
+            description: `${resolvedParams.year} · Evening Shift`,
+            icon: '🌆',
+            badge: '100 Questions',
+        },
     ];
 
     return (
-        <DummyPage
+        <PageShell
             title="Select Exam Date"
-            params={resolvedParams}
+            subtitle={`${paperName} · ${resolvedParams.year}`}
             backLink={`/full-paper/${resolvedParams.paperId}`}
+            backLabel={`${resolvedParams.year} Years`}
         >
-            <h2 className="text-xl font-semibold text-gray-800 mb-4">Available Exam Dates</h2>
-            <NavigationButtons links={dates} />
-        </DummyPage>
+            <SelectionGrid items={dates} />
+        </PageShell>
     );
 }

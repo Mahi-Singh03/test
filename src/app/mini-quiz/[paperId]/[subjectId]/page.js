@@ -1,33 +1,55 @@
-import DummyPage from '@/components/testing/DummyPage';
-import NavigationButtons from '@/components/testing/NavigationButtons';
+import PageShell from '@/components/layout/PageShell';
+import SelectionGrid from '@/components/ui/SelectionGrid';
 import { getCategories } from '@/config/subjects';
+
+const subjectLabels = {
+    'general-awareness': 'General Awareness',
+    'quantitative-aptitude': 'Quantitative Aptitude',
+    'punjabi-language': 'Punjabi Language',
+    'logical-reasoning': 'Logical Reasoning',
+    'digital-literacy': 'Digital Literacy',
+    'english-language': 'English Language',
+};
+
+const paperNames = {
+    'paper-1': 'Paper 1',
+    'paper-2': 'Paper 2',
+};
 
 export default async function CategoriesPage({ params }) {
     const resolvedParams = await params;
-    console.log('CATEGORIES PAGE - Resolved Params:', resolvedParams);
+    const subjectLabel = subjectLabels[resolvedParams.subjectId] || resolvedParams.subjectId;
+    const paperName = paperNames[resolvedParams.paperId] || resolvedParams.paperId;
 
     const categoriesData = getCategories(resolvedParams.paperId, resolvedParams.subjectId);
-    console.log('Categories Data:', categoriesData);
-    console.log('Categories Data Keys:', Object.keys(categoriesData));
 
     const categories = Object.entries(categoriesData).map(([id, data]) => ({
         href: `/mini-quiz/${resolvedParams.paperId}/${resolvedParams.subjectId}/${id}`,
-        label: data.name
+        label: data.name,
+        description: data.description || 'Practice this category',
+        icon: '📂',
     }));
 
     return (
-        <DummyPage
+        <PageShell
             title="Select Category"
-            params={resolvedParams}
+            subtitle={`${paperName} · ${subjectLabel}`}
             backLink={`/mini-quiz/${resolvedParams.paperId}`}
+            backLabel={paperName}
         >
-            <h2 className="text-xl font-semibold text-gray-800 mb-4">Available Categories</h2>
             {categories.length > 0 ? (
-                <NavigationButtons links={categories} />
+                <SelectionGrid items={categories} />
             ) : (
-                <p className="text-gray-600 text-center py-8">No categories available</p>
+                <div style={{
+                    textAlign: 'center',
+                    padding: '3rem 1rem',
+                    color: 'var(--text-2)',
+                }}>
+                    <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>📭</div>
+                    <p style={{ fontWeight: 600, color: 'var(--text-1)', marginBottom: '0.5rem' }}>No categories yet</p>
+                    <p style={{ fontSize: '0.875rem' }}>Check back soon — content is being added!</p>
+                </div>
             )}
-        </DummyPage>
+        </PageShell>
     );
 }
-

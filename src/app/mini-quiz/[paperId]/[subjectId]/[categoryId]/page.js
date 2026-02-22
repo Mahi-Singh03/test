@@ -1,47 +1,71 @@
-import DummyPage from '@/components/testing/DummyPage';
-import NavigationButtons from '@/components/testing/NavigationButtons';
+import PageShell from '@/components/layout/PageShell';
+import SelectionGrid from '@/components/ui/SelectionGrid';
 import { getTopics, getCategoryName } from '@/config/subjects';
+
+const subjectLabels = {
+    'general-awareness': 'General Awareness',
+    'quantitative-aptitude': 'Quantitative Aptitude',
+    'punjabi-language': 'Punjabi Language',
+    'logical-reasoning': 'Logical Reasoning',
+    'digital-literacy': 'Digital Literacy',
+    'english-language': 'English Language',
+};
 
 export default async function TopicsPage({ params }) {
     const resolvedParams = await params;
-    console.log('TOPICS PAGE - Params:', resolvedParams);
 
     const topicsData = getTopics(resolvedParams.paperId, resolvedParams.subjectId, resolvedParams.categoryId);
     const categoryName = getCategoryName(resolvedParams.paperId, resolvedParams.subjectId, resolvedParams.categoryId);
+    const subjectLabel = subjectLabels[resolvedParams.subjectId] || resolvedParams.subjectId;
 
-    // If no topics, show quiz sets directly
+    const backLink = `/mini-quiz/${resolvedParams.paperId}/${resolvedParams.subjectId}`;
+
+    // If no topics — show quiz sets directly
     if (topicsData.length === 0) {
         const quizSets = [
-            { href: `/mini-quiz/${resolvedParams.paperId}/${resolvedParams.subjectId}/${resolvedParams.categoryId}/general/set-1`, label: 'Quiz Set 1' },
-            { href: `/mini-quiz/${resolvedParams.paperId}/${resolvedParams.subjectId}/${resolvedParams.categoryId}/general/set-2`, label: 'Quiz Set 2' }
+            {
+                href: `/mini-quiz/${resolvedParams.paperId}/${resolvedParams.subjectId}/${resolvedParams.categoryId}/general/set-1`,
+                label: 'Quiz Set 1',
+                description: '20 questions · ~15 min',
+                icon: '📝',
+                badge: 'Set 1',
+            },
+            {
+                href: `/mini-quiz/${resolvedParams.paperId}/${resolvedParams.subjectId}/${resolvedParams.categoryId}/general/set-2`,
+                label: 'Quiz Set 2',
+                description: '20 questions · ~15 min',
+                icon: '📋',
+                badge: 'Set 2',
+            },
         ];
 
         return (
-            <DummyPage
-                title={`${categoryName} - Quiz Sets`}
-                params={resolvedParams}
-                backLink={`/mini-quiz/${resolvedParams.paperId}/${resolvedParams.subjectId}`}
+            <PageShell
+                title={`${categoryName}`}
+                subtitle={`${subjectLabel} · Quiz Sets`}
+                backLink={backLink}
+                backLabel={subjectLabel}
             >
-                <h2 className="text-xl font-semibold text-gray-800 mb-4">Available Quiz Sets</h2>
-                <NavigationButtons links={quizSets} />
-            </DummyPage>
+                <SelectionGrid items={quizSets} />
+            </PageShell>
         );
     }
 
-    // Show topics
-    const topics = topicsData.map(topic => ({
+    const topics = topicsData.map((topic, idx) => ({
         href: `/mini-quiz/${resolvedParams.paperId}/${resolvedParams.subjectId}/${resolvedParams.categoryId}/${topic.id}`,
-        label: topic.name
+        label: topic.name,
+        description: topic.description || 'Practice this topic',
+        icon: '📌',
     }));
 
     return (
-        <DummyPage
-            title={`${categoryName} - Select Topic`}
-            params={resolvedParams}
-            backLink={`/mini-quiz/${resolvedParams.paperId}/${resolvedParams.subjectId}`}
+        <PageShell
+            title={`${categoryName}`}
+            subtitle={`${subjectLabel} · Select Topic`}
+            backLink={backLink}
+            backLabel={subjectLabel}
         >
-            <h2 className="text-xl font-semibold text-gray-800 mb-4">Available Topics</h2>
-            <NavigationButtons links={topics} />
-        </DummyPage>
+            <SelectionGrid items={topics} />
+        </PageShell>
     );
 }

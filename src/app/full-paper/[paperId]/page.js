@@ -1,23 +1,41 @@
-import DummyPage from '@/components/testing/DummyPage';
-import NavigationButtons from '@/components/testing/NavigationButtons';
+import PageShell from '@/components/layout/PageShell';
+import SelectionGrid from '@/components/ui/SelectionGrid';
+
+const paperNames = {
+    'paper-1': 'Paper 1',
+    'paper-2': 'Paper 2',
+    'paper-3': 'Paper 3',
+};
 
 export default async function PaperYearsPage({ params }) {
     const resolvedParams = await params;
-    console.log('PAPER YEARS PAGE - Params:', resolvedParams);
+    const paperName = paperNames[resolvedParams.paperId] || resolvedParams.paperId;
 
     const years = [
-        { href: `/full-paper/${resolvedParams.paperId}/2024`, label: '2024' },
-        { href: `/full-paper/${resolvedParams.paperId}/2023`, label: '2023' }
+        {
+            href: `/full-paper/${resolvedParams.paperId}/2024`,
+            label: '2024',
+            description: 'Latest exam year',
+            icon: '🗓️',
+            badge: '2 Dates',
+        },
+        {
+            href: `/full-paper/${resolvedParams.paperId}/2023`,
+            label: '2023',
+            description: 'Previous year paper',
+            icon: '📅',
+            badge: '2 Dates',
+        },
     ];
 
     return (
-        <DummyPage
+        <PageShell
             title="Select Year"
-            params={resolvedParams}
+            subtitle={paperName}
             backLink="/full-paper"
+            backLabel="Full Papers"
         >
-            <h2 className="text-xl font-semibold text-gray-800 mb-4">Available Years</h2>
-            <NavigationButtons links={years} />
-        </DummyPage>
+            <SelectionGrid items={years} />
+        </PageShell>
     );
 }

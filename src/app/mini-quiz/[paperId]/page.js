@@ -1,34 +1,73 @@
-import DummyPage from '@/components/testing/DummyPage';
-import NavigationButtons from '@/components/testing/NavigationButtons';
+import PageShell from '@/components/layout/PageShell';
+import SelectionGrid from '@/components/ui/SelectionGrid';
+
+const paperNames = {
+    'paper-1': 'Paper 1',
+    'paper-2': 'Paper 2',
+};
+
+const subjectsMap = {
+    'paper-1': [
+        {
+            href: null, // built below
+            subjectId: 'general-awareness',
+            label: 'General Awareness',
+            description: 'Current affairs, history & geography',
+            icon: '🌍',
+        },
+        {
+            subjectId: 'quantitative-aptitude',
+            label: 'Quantitative Aptitude',
+            description: 'Maths, arithmetic & reasoning',
+            icon: '🔢',
+        },
+        {
+            subjectId: 'punjabi-language',
+            label: 'Punjabi Language',
+            description: 'Grammar, comprehension & vocabulary',
+            icon: '✍️',
+        },
+    ],
+    'paper-2': [
+        {
+            subjectId: 'logical-reasoning',
+            label: 'Logical Reasoning',
+            description: 'Patterns, sequences & puzzles',
+            icon: '🧩',
+        },
+        {
+            subjectId: 'digital-literacy',
+            label: 'Digital Literacy',
+            description: 'Computers, internet & technology',
+            icon: '💻',
+        },
+        {
+            subjectId: 'english-language',
+            label: 'English Language',
+            description: 'Grammar, comprehension & writing',
+            icon: '📖',
+        },
+    ],
+};
 
 export default async function MiniQuizSubjectsPage({ params }) {
     const resolvedParams = await params;
-    console.log('MINI QUIZ SUBJECTS PAGE - Params:', resolvedParams);
+    const paperName = paperNames[resolvedParams.paperId] || resolvedParams.paperId;
+    const rawSubjects = subjectsMap[resolvedParams.paperId] || subjectsMap['paper-1'];
 
-    // Different subjects based on paper
-    const subjectsMap = {
-        'paper-1': [
-            { href: `/mini-quiz/${resolvedParams.paperId}/general-awareness`, label: 'General Awareness' },
-            { href: `/mini-quiz/${resolvedParams.paperId}/quantitative-aptitude`, label: 'Quantitative Aptitude' },
-            { href: `/mini-quiz/${resolvedParams.paperId}/punjabi-language`, label: 'Punjabi Language' }
-        ],
-        'paper-2': [
-            { href: `/mini-quiz/${resolvedParams.paperId}/logical-reasoning`, label: 'Logical Reasoning' },
-            { href: `/mini-quiz/${resolvedParams.paperId}/digital-literacy`, label: 'Digital Literacy' },
-            { href: `/mini-quiz/${resolvedParams.paperId}/english-language`, label: 'English Language' }
-        ]
-    };
-
-    const subjects = subjectsMap[resolvedParams.paperId] || subjectsMap['paper-1'];
+    const subjects = rawSubjects.map((s) => ({
+        ...s,
+        href: `/mini-quiz/${resolvedParams.paperId}/${s.subjectId}`,
+    }));
 
     return (
-        <DummyPage
+        <PageShell
             title="Select Subject"
-            params={resolvedParams}
+            subtitle={paperName}
             backLink="/mini-quiz"
+            backLabel="Mini Quiz"
         >
-            <h2 className="text-xl font-semibold text-gray-800 mb-4">Available Subjects</h2>
-            <NavigationButtons links={subjects} />
-        </DummyPage>
+            <SelectionGrid items={subjects} />
+        </PageShell>
     );
 }

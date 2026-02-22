@@ -1,70 +1,120 @@
-import DummyPage from '@/components/testing/DummyPage';
+import Link from 'next/link';
 
 export default async function ResultsPage({ params }) {
     const resolvedParams = await params;
-    console.log('RESULTS PAGE - Params:', resolvedParams);
 
-    // Dummy results data
-    const dummyResults = {
+    const results = {
         score: 85,
         totalQuestions: 100,
         correct: 85,
         incorrect: 10,
         unattempted: 5,
-        timeTaken: '45 minutes'
+        timeTaken: '45 min',
+        percentage: 85,
     };
 
+    const grade = results.percentage >= 80 ? { label: 'Excellent', color: '#16a34a', bg: 'rgba(22,163,74,0.08)' }
+        : results.percentage >= 60 ? { label: 'Good', color: '#d97706', bg: 'rgba(217,119,6,0.08)' }
+            : { label: 'Keep Practicing', color: '#dc2626', bg: 'rgba(220,38,38,0.08)' };
+
     return (
-        <DummyPage
-            title="Quiz Results (Dummy)"
-            params={resolvedParams}
-        >
-            <div className="text-center py-8">
-                <div className="text-6xl mb-4">🏆</div>
-                <h2 className="text-3xl font-bold text-gray-800 mb-2">Your Score</h2>
-                <div className="text-5xl font-bold text-green-600 mb-8">
-                    {dummyResults.score}%
+        <div className="page-wrapper" style={{ maxWidth: '600px', margin: '0 auto' }}>
+
+            {/* Score hero */}
+            <div
+                className="card animate-fade-up"
+                style={{ padding: '2.5rem 1.5rem', textAlign: 'center', marginBottom: '1.25rem' }}
+            >
+                {/* Trophy */}
+                <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🏆</div>
+
+                <div style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    background: grade.bg,
+                    color: grade.color,
+                    fontWeight: 700,
+                    fontSize: '0.8rem',
+                    letterSpacing: '0.05em',
+                    textTransform: 'uppercase',
+                    padding: '0.35rem 0.875rem',
+                    borderRadius: '999px',
+                    marginBottom: '1.25rem',
+                }}>
+                    {grade.label}
                 </div>
 
-                <div className="grid grid-cols-2 gap-4 max-w-md mx-auto mb-8">
-                    <div className="bg-green-50 rounded-lg p-4">
-                        <div className="text-2xl font-bold text-green-600">{dummyResults.correct}</div>
-                        <div className="text-sm text-gray-600">Correct</div>
-                    </div>
-                    <div className="bg-red-50 rounded-lg p-4">
-                        <div className="text-2xl font-bold text-red-600">{dummyResults.incorrect}</div>
-                        <div className="text-sm text-gray-600">Incorrect</div>
-                    </div>
-                    <div className="bg-gray-50 rounded-lg p-4">
-                        <div className="text-2xl font-bold text-gray-600">{dummyResults.unattempted}</div>
-                        <div className="text-sm text-gray-600">Unattempted</div>
-                    </div>
-                    <div className="bg-blue-50 rounded-lg p-4">
-                        <div className="text-2xl font-bold text-blue-600">{dummyResults.timeTaken}</div>
-                        <div className="text-sm text-gray-600">Time Taken</div>
-                    </div>
+                <div style={{
+                    fontSize: 'clamp(3.5rem, 15vw, 5rem)',
+                    fontWeight: 900,
+                    color: grade.color,
+                    lineHeight: 1,
+                    letterSpacing: '-0.04em',
+                    marginBottom: '0.375rem',
+                }}>
+                    {results.percentage}%
                 </div>
-
-                <div className="bg-yellow-50 rounded-lg p-6 max-w-md mx-auto mb-8">
-                    <h3 className="font-semibold text-yellow-800 mb-2">📝 Note</h3>
-                    <p className="text-sm text-yellow-700">This is dummy data for testing purposes</p>
-                </div>
-
-                <div className="space-x-4">
-                    <a
-                        href="/"
-                        className="inline-block bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 transition"
-                    >
-                        Back to Home
-                    </a>
-                    <a
-                        href="/mini-quiz"
-                        className="inline-block bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition"
-                    >
-                        Try Another Quiz
-                    </a>
-                </div>
+                <p style={{ fontSize: '0.875rem', color: 'var(--text-2)' }}>
+                    {results.correct} of {results.totalQuestions} questions correct
+                </p>
             </div>
-        </DummyPage>
+
+            {/* Stats grid */}
+            <div
+                className="card animate-fade-up stagger-1"
+                style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(2, 1fr)',
+                    marginBottom: '1.25rem',
+                    overflow: 'hidden',
+                }}
+            >
+                {[
+                    { label: 'Correct', value: results.correct, color: '#16a34a', icon: '✓' },
+                    { label: 'Incorrect', value: results.incorrect, color: '#dc2626', icon: '✗' },
+                    { label: 'Unattempted', value: results.unattempted, color: 'var(--text-2)', icon: '–' },
+                    { label: 'Time Taken', value: results.timeTaken, color: '#1565C0', icon: '⏱' },
+                ].map((stat, idx) => (
+                    <div key={stat.label} style={{
+                        padding: '1.25rem',
+                        borderRight: idx % 2 === 0 ? '1px solid var(--border)' : 'none',
+                        borderBottom: idx < 2 ? '1px solid var(--border)' : 'none',
+                        textAlign: 'center',
+                    }}>
+                        <div style={{
+                            fontSize: '1.625rem',
+                            fontWeight: 800,
+                            color: stat.color,
+                            letterSpacing: '-0.02em',
+                            lineHeight: 1,
+                            marginBottom: '0.375rem',
+                        }}>
+                            {stat.value}
+                        </div>
+                        <div style={{ fontSize: '0.8125rem', color: 'var(--text-2)', fontWeight: 500 }}>
+                            {stat.label}
+                        </div>
+                    </div>
+                ))}
+            </div>
+
+            {/* Actions */}
+            <div
+                className="animate-fade-up stagger-2"
+                style={{ display: 'flex', gap: '0.75rem', flexDirection: 'column' }}
+            >
+                <Link href="/mini-quiz" className="btn-primary" style={{ justifyContent: 'center' }}>
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                    </svg>
+                    Try Another Quiz
+                </Link>
+                <Link href="/" className="btn-secondary" style={{ justifyContent: 'center' }}>
+                    Back to Home
+                </Link>
+            </div>
+
+        </div>
     );
 }

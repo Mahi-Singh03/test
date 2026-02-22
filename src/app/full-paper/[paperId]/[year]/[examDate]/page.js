@@ -1,34 +1,65 @@
-import DummyPage from '@/components/testing/DummyPage';
+import Link from 'next/link';
+import PageShell from '@/components/layout/PageShell';
+
+const formatDate = (slug) => {
+    const map = {
+        'jan-15': 'January 15',
+        'feb-05': 'February 05',
+    };
+    return map[slug] || slug;
+};
+
+const paperNames = {
+    'paper-1': 'Paper 1',
+    'paper-2': 'Paper 2',
+    'paper-3': 'Paper 3',
+};
 
 export default async function FullPaperQuizPage({ params }) {
     const resolvedParams = await params;
-    console.log('FULL PAPER QUIZ PAGE - Params:', resolvedParams);
+    const paperName = paperNames[resolvedParams.paperId] || resolvedParams.paperId;
+    const examDate = formatDate(resolvedParams.examDate);
 
     return (
-        <DummyPage
-            title="Full Paper Quiz (Dummy)"
-            params={resolvedParams}
+        <PageShell
+            title={`${paperName} · ${resolvedParams.year}`}
+            subtitle={`Exam Date: ${examDate}`}
             backLink={`/full-paper/${resolvedParams.paperId}/${resolvedParams.year}`}
+            backLabel="Exam Dates"
         >
-            <div className="text-center py-12">
-                <div className="text-6xl mb-4">📝</div>
-                <h2 className="text-2xl font-bold text-gray-800 mb-4">Full Paper Quiz Page</h2>
-                <p className="text-gray-600 mb-6">This is where the actual quiz would load</p>
-
-                <div className="bg-green-50 rounded-lg p-6 max-w-md mx-auto">
-                    <h3 className="font-semibold text-green-800 mb-2">Route Test Successful!</h3>
-                    <p className="text-sm text-green-700">All parameters captured correctly</p>
-                </div>
-
-                <div className="mt-8">
-                    <a
-                        href="/"
-                        className="inline-block bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 transition"
-                    >
+            {/* Coming soon card */}
+            <div style={{
+                textAlign: 'center',
+                padding: '3rem 1.5rem',
+            }} className="card">
+                <div style={{ fontSize: '3rem', marginBottom: '1.25rem' }}>📝</div>
+                <h2 style={{
+                    fontSize: '1.25rem',
+                    fontWeight: 700,
+                    color: 'var(--text-1)',
+                    marginBottom: '0.75rem',
+                    letterSpacing: '-0.01em',
+                }}>
+                    Quiz Engine Coming Soon
+                </h2>
+                <p style={{
+                    fontSize: '0.9rem',
+                    color: 'var(--text-2)',
+                    maxWidth: '340px',
+                    margin: '0 auto 2rem',
+                    lineHeight: 1.6,
+                }}>
+                    The full question paper for <strong>{paperName}</strong>, {resolvedParams.year} ({examDate}) will load here.
+                </p>
+                <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                    <Link href={`/full-paper/${resolvedParams.paperId}/${resolvedParams.year}`} className="btn-secondary">
+                        ← Change Date
+                    </Link>
+                    <Link href="/" className="btn-primary">
                         Back to Home
-                    </a>
+                    </Link>
                 </div>
             </div>
-        </DummyPage>
+        </PageShell>
     );
 }
