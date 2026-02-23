@@ -1,5 +1,6 @@
 import './globals.css';
 import Navbar from '../components/ui/navbar';
+import ScrollToTop from '../components/extras/scroll-to-top';
 
 export const metadata = {
     title: 'QuizMaster — Prepare Smarter',
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
                 />
             </head>
             <body>
+                <ScrollToTop />
                 <Navbar />
                 <main style={{ paddingTop: '30px' }}>{children}</main>
             </body>

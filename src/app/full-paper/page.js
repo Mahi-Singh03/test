@@ -16,13 +16,7 @@ const papers = [
         icon: '📗',
         badge: '3 Subjects',
     },
-    {
-        href: '/full-paper/paper-3',
-        label: 'Paper 3',
-        description: 'Mixed subjects · Advanced level',
-        icon: '📙',
-        badge: '3 Subjects',
-    },
+
 ];
 
 export default function FullPaperPage() {
