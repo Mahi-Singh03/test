@@ -78,6 +78,18 @@ function listJsonFiles(dirPath) {
     }
 }
 
+/* ─── Default metadata for known papers ─── */
+const DEFAULT_PAPER_META = {
+    'paper-1': {
+        description: 'General Awareness, Quantitative Aptitude, Punjabi Language',
+        icon: '📄',
+    },
+    'paper-2': {
+        description: 'Logical Reasoning, Digital Literacy, English Language',
+        icon: '📋',
+    },
+};
+
 /* ══════════════════════════════════════════════════════
    PUBLIC API
 ══════════════════════════════════════════════════════ */
@@ -89,11 +101,14 @@ export function getPapers() {
     const dirs = listDirs(DATA_ROOT);
     return dirs.map((id) => {
         const meta = readMeta(path.join(DATA_ROOT, id));
+        const defaults = DEFAULT_PAPER_META[id] || {};
         return {
             id,
             label: meta?.label || slugToLabel(id),
-            description: meta?.description || '',
-            icon: meta?.icon || '📄',
+            description: (meta && meta.description != null && meta.description !== '')
+                ? meta.description
+                : (defaults.description || ''),
+            icon: meta?.icon || defaults.icon || '📄',
         };
     });
 }
