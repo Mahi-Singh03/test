@@ -1,55 +1,53 @@
-import Link from 'next/link';
-import PageShell from '@/components/layout/PageShell';
+import { notFound } from 'next/navigation';
+import QuizEngine from '@/components/quiz/QuizEngine';
+import { getQuizQuestions, getMeta } from '@/lib/quizData';
 
-export default async function MiniQuizGamePage({ params }) {
-    const resolvedParams = await params;
-    const setLabel = resolvedParams.quizSetId
-        ? resolvedParams.quizSetId.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
-        : 'Quiz Set';
+/* ─── Metadata ─── */
+export async function generateMetadata({ params }) {
+    const { paperId, subjectId, categoryId, topicId, quizSetId } = await params;
+    const topicMeta = getMeta(paperId, subjectId, categoryId, topicId);
+    const categoryMeta = getMeta(paperId, subjectId, categoryId);
+    const topicLabel = topicMeta?.label || topicId.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+    const categoryLabel = categoryMeta?.label || categoryId.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+    const setLabel = quizSetId.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 
-    return (
-        <PageShell
-            title={setLabel}
-            subtitle="Mini Quiz"
-            backLink={`/mini-quiz/${resolvedParams.paperId}/${resolvedParams.subjectId}/${resolvedParams.categoryId}/${resolvedParams.topicId}`}
-            backLabel="Quiz Sets"
-        >
-            {/* Coming soon card */}
-            <div style={{
-                textAlign: 'center',
-                padding: '3rem 1.5rem',
-            }} className="card">
-                <div style={{ fontSize: '3rem', marginBottom: '1.25rem' }}>🎯</div>
-                <h2 style={{
-                    fontSize: '1.25rem',
-                    fontWeight: 700,
-                    color: 'var(--text-1)',
-                    marginBottom: '0.75rem',
-                    letterSpacing: '-0.01em',
-                }}>
-                    Quiz Engine Coming Soon
-                </h2>
-                <p style={{
-                    fontSize: '0.9rem',
-                    color: 'var(--text-2)',
-                    maxWidth: '340px',
-                    margin: '0 auto 2rem',
-                    lineHeight: 1.6,
-                }}>
-                    The <strong>{setLabel}</strong> questions will load here once the quiz engine is connected.
-                </p>
-                <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-                    <Link
-                        href={`/results/mini-${resolvedParams.quizSetId}-preview`}
-                        className="btn-primary"
-                    >
-                        Preview Results
-                    </Link>
-                    <Link href="/" className="btn-secondary">
-                        Back to Home
-                    </Link>
-                </div>
-            </div>
-        </PageShell>
-    );
+    return {
+        title: `${categoryLabel} — ${setLabel} | Exam Center`,
+        description: `Practice ${topicLabel} with timed exam conditions. +4/−1 marking scheme, 60-minute countdown.`,
+    };
+}
+
+/* ─── Page ─── */
+export default async function QuizGamePage({ params }) {
+    const { paperId, subjectId, categoryId, topicId, quizSetId } = await params;
+
+    /* Load questions from the file-system mirrored path */
+    const questions = getQuizQuestions(paperId, subjectId, categoryId, topicId, quizSetId);
+
+    if (!questions || !Array.isArray(questions) || questions.length === 0) {
+        notFound();
+    }
+
+    /* Build meta from folder _meta.json files */
+    const subjectMeta = getMeta(paperId, subjectId);
+    const categoryMeta = getMeta(paperId, subjectId, categoryId);
+    const topicMeta = getMeta(paperId, subjectId, categoryId, topicId);
+    const paperMeta = getMeta(paperId);
+
+    const subjectLabel = subjectMeta?.label || subjectId.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+    const categoryLabel = categoryMeta?.label || categoryId.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+    const topicLabel = topicMeta?.label || topicId.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+    const paperLabel = paperMeta?.label || paperId.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+    const setLabel = quizSetId.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+
+    const meta = {
+        title: subjectLabel,
+        subject: `${categoryLabel} · ${topicLabel} · ${setLabel}`,
+        paper: paperLabel,
+        duration: 60,
+        marksPerQuestion: 4,
+        negativeMarking: 1,
+    };
+
+    return <QuizEngine questions={questions} meta={meta} />;
 }

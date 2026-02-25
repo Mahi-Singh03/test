@@ -1,73 +1,43 @@
 import PageShell from '@/components/layout/PageShell';
 import SelectionGrid from '@/components/ui/SelectionGrid';
-
-const paperNames = {
-    'paper-1': 'Paper 1',
-    'paper-2': 'Paper 2',
-};
-
-const subjectsMap = {
-    'paper-1': [
-        {
-            href: null, // built below
-            subjectId: 'general-awareness',
-            label: 'General Awareness',
-            description: 'Current affairs, history & geography',
-            icon: '🌍',
-        },
-        {
-            subjectId: 'quantitative-aptitude',
-            label: 'Quantitative Aptitude',
-            description: 'Maths, arithmetic & reasoning',
-            icon: '🔢',
-        },
-        {
-            subjectId: 'punjabi-language',
-            label: 'Punjabi Language',
-            description: 'Grammar, comprehension & vocabulary',
-            icon: '✍️',
-        },
-    ],
-    'paper-2': [
-        {
-            subjectId: 'logical-reasoning',
-            label: 'Logical Reasoning',
-            description: 'Patterns, sequences & puzzles',
-            icon: '🧩',
-        },
-        {
-            subjectId: 'digital-literacy',
-            label: 'Digital Literacy',
-            description: 'Computers, internet & technology',
-            icon: '💻',
-        },
-        {
-            subjectId: 'english-language',
-            label: 'English Language',
-            description: 'Grammar, comprehension & writing',
-            icon: '📖',
-        },
-    ],
-};
+import { getSubjects, getMeta } from '@/lib/quizData';
 
 export default async function MiniQuizSubjectsPage({ params }) {
-    const resolvedParams = await params;
-    const paperName = paperNames[resolvedParams.paperId] || resolvedParams.paperId;
-    const rawSubjects = subjectsMap[resolvedParams.paperId] || subjectsMap['paper-1'];
+    const { paperId } = await params;
 
-    const subjects = rawSubjects.map((s) => ({
-        ...s,
-        href: `/mini-quiz/${resolvedParams.paperId}/${s.subjectId}`,
+    const subjects = getSubjects(paperId);
+    const paperMeta = getMeta(paperId);
+    const paperLabel = paperMeta?.label || paperId.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+
+    const items = subjects.map((s) => ({
+        href: `/mini-quiz/${paperId}/${s.id}`,
+        label: s.label,
+        description: s.description,
+        icon: s.icon,
     }));
 
     return (
         <PageShell
             title="Select Subject"
-            subtitle={paperName}
+            subtitle={paperLabel}
             backLink="/mini-quiz"
             backLabel="Mini Quiz"
         >
-            <SelectionGrid items={subjects} />
+            {items.length > 0 ? (
+                <SelectionGrid items={items} />
+            ) : (
+                <EmptyState message="No subjects found. Add a subject folder inside data/mini-quiz/{paperId}/." />
+            )}
         </PageShell>
+    );
+}
+
+function EmptyState({ message }) {
+    return (
+        <div style={{ textAlign: 'center', padding: '3rem 1rem', color: 'var(--text-2)' }}>
+            <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>📭</div>
+            <p style={{ fontWeight: 600, color: 'var(--text-1)', marginBottom: '0.5rem' }}>Nothing here yet</p>
+            <p style={{ fontSize: '0.875rem', maxWidth: 340, margin: '0 auto' }}>{message}</p>
+        </div>
     );
 }

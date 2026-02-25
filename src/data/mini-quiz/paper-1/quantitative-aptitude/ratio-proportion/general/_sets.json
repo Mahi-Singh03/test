@@ -1,0 +1,9 @@
+{
+    "set-1": {
+        "label": "Set 1",
+        "description": "30 questions · 60 min",
+        "icon": "📝",
+        "questions": 30,
+        "duration": 60
+    }
+}

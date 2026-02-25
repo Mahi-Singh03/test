@@ -1,0 +1,13 @@
+{
+    "id": "ratio-and-proportion-test-1",
+    "title": "Ratio & Proportions",
+    "paper": "Paper 1",
+    "subject": "Quantitative Aptitude",
+    "category": "Arithmetic",
+    "topic": "Ratio and Proportion",
+    "duration": 60,
+    "marksPerQuestion": 4,
+    "negativeMarking": 1,
+    "totalQuestions": 30,
+    "dataFile": "ratio-and-proportion-test-1.json"
+}
