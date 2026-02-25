@@ -5,5 +5,12 @@
         "icon": "📝",
         "questions": 30,
         "duration": 60
+    },
+    "set-2": {
+        "label": "Set 2",
+        "description": "30 questions · 60 min",
+        "icon": "📝",
+        "questions": 30,
+        "duration": 60
     }
 }
