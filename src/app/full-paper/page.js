@@ -42,7 +42,7 @@ export default function FullPaperPage() {
                     <circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" />
                 </svg>
                 <p style={{ fontSize: '0.875rem', color: 'var(--text-2)', lineHeight: 1.5 }}>
-                    Select a paper below. You&apos;ll then choose the year and exam date to attempt the full question paper.
+                    Select a paper below. You&apos;ll then choose the year and available paper to attempt.
                 </p>
             </div>
 

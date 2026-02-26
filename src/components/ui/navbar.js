@@ -67,6 +67,12 @@ const Navbar = () => {
 
   const pathname = usePathname();
 
+  // Hide navbar on exam pages to prevent distractions
+  const isExamPage = pathname && (
+    pathname.match(/^\/full-paper\/[^/]+\/[^/]+\/[^/]+$/) ||
+    pathname.match(/^\/mini-quiz\/[^/]+\/[^/]+\/[^/]+\/[^/]+\/[^/]+$/)
+  );
+
   // Scroll detection
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -86,6 +92,10 @@ const Navbar = () => {
     setMobileOpen(false);
     setOpenDropdown(null);
   }, [pathname]);
+
+  if (isExamPage) {
+    return null;
+  }
 
   const toggleDark = () => {
     setIsDark(prev => {

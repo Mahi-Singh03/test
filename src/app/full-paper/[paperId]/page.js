@@ -1,3 +1,5 @@
+import fs from 'fs';
+import path from 'path';
 import PageShell from '@/components/layout/PageShell';
 import SelectionGrid from '@/components/ui/SelectionGrid';
 
@@ -11,49 +13,33 @@ export default async function PaperYearsPage({ params }) {
     const resolvedParams = await params;
     const paperName = paperNames[resolvedParams.paperId] || resolvedParams.paperId;
 
-    const years = [
-        {
-            href: `/full-paper/${resolvedParams.paperId}/2024`,
-            label: '2024',
-            description: 'Latest exam year',
-            icon: '🗓️',
-            badge: '2 Dates',
-        },
-        {
-            href: `/full-paper/${resolvedParams.paperId}/2023`,
-            label: '2023',
-            description: 'Coming Soon',
-            icon: '📅',
-            badge: '2 Dates',
-        },
-        {
-            href: `/full-paper/${resolvedParams.paperId}/2022`,
-            label: '2022',
-            description: 'Coming Soon',
-            icon: '📅',
-            badge: '2 Dates',
-        }, {
-            href: `/full-paper/${resolvedParams.paperId}/2021`,
-            label: '2021',
-            description: 'Coming Soon',
-            icon: '📅',
-            badge: '2 Dates',
-        },
-        {
-            href: `/full-paper/${resolvedParams.paperId}/2020`,
-            label: '2020',
-            description: 'Coming Soon',
-            icon: '📅',
-            badge: '2 Dates',
-        },
-        {
-            href: `/full-paper/${resolvedParams.paperId}/2023`,
-            label: '2023',
-            description: 'Coming Soon',
-            icon: '📅',
-            badge: '2 Dates',
-        },
-    ];
+    const dirPath = path.join(process.cwd(), 'src', 'data', 'papers', resolvedParams.paperId);
+    let years = [];
+
+    try {
+        const folders = fs.readdirSync(dirPath, { withFileTypes: true })
+            .filter((d) => d.isDirectory())
+            .map((d) => d.name)
+            .sort().reverse();
+
+        years = folders.map(folder => {
+            const datePath = path.join(dirPath, folder);
+            let dateCount = 0;
+            try {
+                dateCount = fs.readdirSync(datePath, { withFileTypes: true }).filter(d => d.isDirectory()).length;
+            } catch (e) { }
+
+            return {
+                href: `/full-paper/${resolvedParams.paperId}/${folder}`,
+                label: folder,
+                description: `${paperName} · ${folder}`,
+                icon: '🗓️',
+                badge: `${dateCount} Papers`,
+            };
+        });
+    } catch (e) {
+        console.error("Error reading years:", e);
+    }
 
     return (
         <PageShell
@@ -62,7 +48,13 @@ export default async function PaperYearsPage({ params }) {
             backLink="/full-paper"
             backLabel="Full Papers"
         >
-            <SelectionGrid items={years} />
+            {years.length > 0 ? (
+                <SelectionGrid items={years} />
+            ) : (
+                <div style={{ textAlign: 'center', padding: '3rem 1.5rem' }} className="card">
+                    <p>No papers available yet.</p>
+                </div>
+            )}
         </PageShell>
     );
 }

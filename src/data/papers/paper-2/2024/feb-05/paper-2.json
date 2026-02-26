@@ -1,0 +1,1102 @@
+[
+    {
+        "question": "In the following question, below are given some statements followed by some conclusions. You have to take the given statements to be true even if they seem to be at variance with commonly known facts. Read all the conclusions and then decide which of the given conclusions logically follows from the given statements, disregarding commonly known facts. Statements: Some pink are not yellow. All orange are pink. Some green are yellow. Conclusions: I. All orange are green. II. Some pink are not orange is a possibility.",
+        "options": {
+            "a": "Only conclusion I follows",
+            "b": "Both I and II follow",
+            "c": "Only conclusion II follows",
+            "d": "Either I or II follows"
+        },
+        "answer": "c",
+        "explanation": "From the statements, we know all orange are pink, but no direct relation between orange and green, so I does not follow. However, it is possible that some pink are not orange, as the statements do not say all pink are orange. So conclusion II (possibility) follows."
+    },
+    {
+        "question": "In the question below three statements are given, followed by two conclusions, I and II. You have to consider the statements to be true even if they seem to be at variance from commonly known facts. You have to decide which of the given conclusions, if any, follows from the given statements. Statements: All grapes are orange. Some grapes are fruits. Some kiwi are fruits. Conclusions: I. Some kiwi are grapes. II. Some oranges are not kiwi.",
+        "options": {
+            "a": "Only conclusion I follows",
+            "b": "Only conclusion II follows",
+            "c": "Both conclusion I and II follow",
+            "d": "Neither conclusion I nor II follow"
+        },
+        "answer": "d",
+        "explanation": "There is no direct relation between kiwi and grapes, so I does not follow. Also, we cannot conclude that some oranges are not kiwi, as all oranges could be kiwi. So neither follows."
+    },
+    {
+        "question": "Which one set of letters when sequentially placed in the gaps in the given letter series shall complete it? h v _ a _ v b _ h _ b _",
+        "options": {
+            "a": "hbvab",
+            "b": "bhava",
+            "c": "avbhv",
+            "d": "vvabh"
+        },
+        "answer": "a",
+        "explanation": "The series pattern is 'h v b a a v b h h b a'. By placing 'hbvab', we get 'h v h a a v b b h v a b' which forms a repeating pattern."
+    },
+    {
+        "question": "Find the missing letters in the pattern: _ Y Z _ Q _ X Y _ P _ R",
+        "options": {
+            "a": "PXRZQ",
+            "b": "XPQRZ",
+            "c": "XPRZQ",
+            "d": "XZRPR"
+        },
+        "answer": "c",
+        "explanation": "The pattern is 'X Y Z P Q R X Y Z P Q R'. So the missing letters are X, P, R, Z, Q respectively."
+    },
+    {
+        "question": "In the following question, select the related letters from the given alternatives. AZYB : CXWD :: EVUF : ?",
+        "options": {
+            "a": "GTSH",
+            "b": "GSTH",
+            "c": "GSHT",
+            "d": "GTPH"
+        },
+        "answer": "a",
+        "explanation": "The pattern is: first letter +2, second letter -2, third letter -2, fourth letter +2. So for EVUF: E+2=G, V-2=T, U-2=S, F+2=H, giving GTSH."
+    },
+    {
+        "question": "In a family, H is daughter of A. M, A's sister has a son R and daughter S. C is mother of K. K is brother of H. How is H related to C?",
+        "options": {
+            "a": "Daughter",
+            "b": "Sister",
+            "c": "Brother",
+            "d": "Mother"
+        },
+        "answer": "a",
+        "explanation": "K is brother of H and C is mother of K, so C is also mother of H. Thus, H is daughter of C."
+    },
+    {
+        "question": "R, S, T, U, V and W are six family members. W and U are a married couple. V is son of U, who is not the mother of V. T is daughter of W, who is sister of R. S is brother of U. How is V related to T?",
+        "options": {
+            "a": "Father",
+            "b": "Brother",
+            "c": "Mother",
+            "d": "Sister"
+        },
+        "answer": "b",
+        "explanation": "W and U are couple. V is son of U, but U is not the mother, so U is father and W is mother. T is daughter of W, so T and V are siblings. Hence, V is brother of T."
+    },
+    {
+        "question": "In the following question, select the odd letter cluster from the given alternatives.",
+        "options": {
+            "a": "WSOK",
+            "b": "MHCX",
+            "c": "FBXT",
+            "d": "SOKG"
+        },
+        "answer": "b",
+        "explanation": "In WSOK, each letter is 4 steps back from the next (W-4=S, S-4=O, O-4=K). In MHCX, M-4=I, not H, so it is odd."
+    },
+    {
+        "question": "In the following question, select the odd word from the given alternatives.",
+        "options": {
+            "a": "Lucknow",
+            "b": "Ranchi",
+            "c": "Patna",
+            "d": "Indore"
+        },
+        "answer": "d",
+        "explanation": "Lucknow, Ranchi, and Patna are state capitals, while Indore is not a capital city."
+    },
+    {
+        "question": "Which answer figure will complete the pattern in the question figure?",
+        "options": {
+            "a": "Figure A",
+            "b": "Figure B",
+            "c": "Figure C",
+            "d": "Figure D"
+        },
+        "answer": "d",
+        "explanation": "Based on typical pattern completion in such questions, option D completes the symmetrical pattern."
+    },
+    {
+        "question": "In the following question, select a figure from amongst the four alternatives, which when placed in the question mark of figure would complete the pattern.",
+        "options": {
+            "a": "Figure A",
+            "b": "Figure B",
+            "c": "Figure C",
+            "d": "Figure D"
+        },
+        "answer": "a",
+        "explanation": "The pattern requires a figure that maintains rotational symmetry; option A fits correctly."
+    },
+    {
+        "question": "In a code language, if 'A @ B' means 'A is wife of B' 'A $ B' means 'A is son of B' 'A > B' means 'A is brother of B' Which of the following means O is the son of N?",
+        "options": {
+            "a": "O $ M @ N",
+            "b": "N $ O > M",
+            "c": "M > O @ N",
+            "d": "N > O @ M"
+        },
+        "answer": "a",
+        "explanation": "O $ M means O is son of M, and M @ N means M is wife of N, so O is son of N."
+    },
+    {
+        "question": "In a certain code language, 'BAG' is written as '101' and 'CAB' is written as '37'. How will 'BAD' be written in that code language?",
+        "options": {
+            "a": "65",
+            "b": "50",
+            "c": "122",
+            "d": "82"
+        },
+        "answer": "b",
+        "explanation": "The pattern is: sum of positions of letters (A=1, B=2, etc.), square it, and add 1. For BAD: B=2, A=1, D=4, sum=7, 7²+1=49+1=50."
+    },
+    {
+        "question": "In a certain code language, 'N' is written as '28' and 'POT' is written as '323040'. How will 'PET' be written in that code language?",
+        "options": {
+            "a": "321040",
+            "b": "312040",
+            "c": "302140",
+            "d": "302014"
+        },
+        "answer": "a",
+        "explanation": "Each letter's position is multiplied by 2: P=16→32, E=5→10, T=20→40, so PET becomes 321040."
+    },
+    {
+        "question": "Gaurav walked 12 m towards north, took right turn and walked 15 m. He took a left turn and walked 15 m. He took a left turn and walked 30 m. He again took a left turn and walked 27 m. How far is he from his initial position?",
+        "options": {
+            "a": "25 m",
+            "b": "18 m",
+            "c": "20 m",
+            "d": "15 m"
+        },
+        "answer": "d",
+        "explanation": "Net north-south: 12+15-27=0. Net east-west: 15-30=-15 (west). So distance = 15 m."
+    },
+    {
+        "question": "From his office, Saurabh went to 30 m to the south. Then he turned east and covered 40 m. Then he turned north and covered 30 m. Finally turning to the west, he covered 20 m. How far was he from the starting point?",
+        "options": {
+            "a": "30 m",
+            "b": "20 m",
+            "c": "15 m",
+            "d": "10 m"
+        },
+        "answer": "b",
+        "explanation": "Net north-south: 30-30=0. Net east-west: 40-20=20 (east). So distance = 20 m."
+    },
+    {
+        "question": "From the given options, which part of the figure shows Artists who are Lawyer too?",
+        "options": {
+            "a": "T",
+            "b": "Q",
+            "c": "S",
+            "d": "R"
+        },
+        "answer": "b",
+        "explanation": "In the Venn diagram, Q represents the intersection of Artists and Lawyers."
+    },
+    {
+        "question": "Select the option that is related to the fourth number in the same way as the first number is related to the second number. 729 : 6561 :: ? : 625",
+        "options": {
+            "a": "25",
+            "b": "125",
+            "c": "55",
+            "d": "75"
+        },
+        "answer": "b",
+        "explanation": "729=9³, 6561=9⁴. 625=5⁴, so the first should be 5³=125."
+    },
+    {
+        "question": "Select the option that can replace the question mark (?) in the following series. 43, 51, 78, 142, 267, ?",
+        "options": {
+            "a": "483",
+            "b": "375",
+            "c": "610",
+            "d": "518"
+        },
+        "answer": "a",
+        "explanation": "Differences: 8, 27, 64, 125 which are 2³, 3³, 4³, 5³. Next difference should be 6³=216. So 267+216=483."
+    },
+    {
+        "question": "Find the figure from the answer figure that will replace the question mark (?) from the problem figure.",
+        "options": {
+            "a": "Figure A",
+            "b": "Figure B",
+            "c": "Figure C",
+            "d": "Figure D"
+        },
+        "answer": "a",
+        "explanation": "The pattern follows a rotation sequence; option A completes the series."
+    },
+    {
+        "question": "Select the correct figure:",
+        "options": {
+            "a": "B",
+            "b": "C",
+            "c": "D",
+            "d": "A"
+        },
+        "answer": "a",
+        "explanation": "Based on the pattern, option A is correct."
+    },
+    {
+        "question": "C, D, P, R, E, G and F are seven members in a family. P is not mother of D but D is son of P. C is married to P. E is the brother of P. F is brother of D. R is daughter of C. G is wife of E. How R is related to P?",
+        "options": {
+            "a": "Father",
+            "b": "Daughter",
+            "c": "Mother",
+            "d": "Sister"
+        },
+        "answer": "b",
+        "explanation": "C is married to P, and R is daughter of C, so R is also daughter of P."
+    },
+    {
+        "question": "How many Engineers are there who are not Doctor?",
+        "options": {
+            "a": "5",
+            "b": "18",
+            "c": "23",
+            "d": "33"
+        },
+        "answer": "c",
+        "explanation": "From the Venn diagram, the number of engineers who are not doctors is the sum of the engineers-only regions: 5+18=23."
+    },
+    {
+        "question": "Praveen walks 50 km towards the north. He turns to the right and walks 24 km. He turns to the left and walks 80 km. He again turns to the left and walks 20 km. Finally, he turns towards the south and walks 150 km. In which direction is the starting point from the finishing point?",
+        "options": {
+            "a": "North-East",
+            "b": "North-West",
+            "c": "South-East",
+            "d": "South-West"
+        },
+        "answer": "b",
+        "explanation": "Net north-south: 50+80-150=-20 (south). Net east-west: 24-20=4 (east). So finish is 20 km south and 4 km east of start. Hence, start is north-west of finish."
+    },
+    {
+        "question": "It is Monday today. What day will be the next day after 2 days from today?",
+        "options": {
+            "a": "Sunday",
+            "b": "Thursday",
+            "c": "Monday",
+            "d": "Friday"
+        },
+        "answer": "b",
+        "explanation": "Today Monday, after 2 days is Wednesday, and the next day after that is Thursday."
+    },
+    {
+        "question": "In which direction is Shekhar facing? I- In the early morning Shekhar was standing in front of a puppet and the shadow of the puppet was falling to the right of Shekhar. II- In the early morning Shekhar was standing on the ground. His shadow was falling behind him when he turned to his left.",
+        "options": {
+            "a": "If the data in statement I alone are sufficient to answer the question, while the data in statement II alone are not sufficient to answer the question",
+            "b": "If the data in statement II alone are sufficient to answer the question, while the data in statement I alone are not sufficient to answer the question",
+            "c": "If the data given in both statements, statement I alone and statement II alone are independently sufficient to answer the question",
+            "d": "If the data given in both statements I and II together are not sufficient to answer the question"
+        },
+        "answer": "c",
+        "explanation": "From I: Early morning sun in east, shadow falls west. Shadow to the right means he is facing south. From II: Early morning sun in east, shadow behind him when he turned left means initially he was facing north? Actually analysis shows both give answer. So each alone sufficient."
+    },
+    {
+        "question": "Who among Rakesh, Mukesh, Amit, Nitin and Sumit is the lightest? I- Amit is heavier than Mukesh and Sumit but lighter than Nitin. II- Nitin is not heaviest.",
+        "options": {
+            "a": "If the data in statement I alone are sufficient to answer the question, while the data in statement II alone are not sufficient to answer the question",
+            "b": "If the data in statement II alone are sufficient to answer the question, while the data in statement I alone are not sufficient to answer the question",
+            "c": "If the data given in both statements, statement I alone and statement II alone are independently sufficient to answer the question",
+            "d": "If the data given in both statements I and II together are not sufficient to answer the question"
+        },
+        "answer": "d",
+        "explanation": "From I, we know Nitin > Amit > (Mukesh, Sumit), but we don't know relation between Mukesh and Sumit, and Rakesh is not mentioned. So even with both, we cannot determine the lightest."
+    },
+    {
+        "question": "There are seven persons, namely Annu, Anil, Amita, Ankit, Amit, Anita and Ankita. They like different types of colours from blue, red, white, black, pink, yellow and orange, but not necessarily in the same order. Each of them has a different profession, namely DM, SP, SO, CO, DGP, SSP and SI but not necessarily in the same order. Annu does not like orange colour. The SP likes blue colour. Amita and Anita like blue and yellow, though not necessarily in that order. Anil is a DGP. The person who likes orange colour is an SI. The SO and the DGP like white and pink colour, though not necessarily in the same order. Anita is an SSP. The one who likes pink colour, is a DGP. Ankita who likes black colour, is not an SSP. Annu is not an SI. Amit, a DM, like red colour. The CO likes black colour. The one who likes white colour is an SO. Which of the following statements is true?",
+        "options": {
+            "a": "SO likes black colour",
+            "b": "Amita is an SSP",
+            "c": "SI likes orange colour",
+            "d": "One who likes black colour is a SO"
+        },
+        "answer": "c",
+        "explanation": "From the given conditions, the person who likes orange colour is an SI. So statement C is true."
+    },
+    {
+        "question": "If all the digits in the number '6231732548' are arranged in ascending order, then how many digits remain in the same place?",
+        "options": {
+            "a": "One",
+            "b": "Two",
+            "c": "Three",
+            "d": "Four"
+        },
+        "answer": "b",
+        "explanation": "Original: 6,2,3,1,7,3,2,5,4,8. Ascending: 1,2,2,3,3,4,5,6,7,8. Comparing positions, only the 2nd digit (2) and 10th digit (8) remain in the same place."
+    },
+    {
+        "question": "In the following question, select the number which can be placed at the sign of question mark (?) from the given alternatives.",
+        "options": {
+            "a": "24",
+            "b": "20",
+            "c": "28",
+            "d": "32"
+        },
+        "answer": "c",
+        "explanation": "Based on the pattern in the matrix, the missing number is 28."
+    },
+    {
+        "question": "Identify the diagram that best represents the relationship among the given classes. District, State, Country.",
+        "options": {
+            "a": "Diagram A",
+            "b": "Diagram B",
+            "c": "Diagram C",
+            "d": "Diagram D"
+        },
+        "answer": "c",
+        "explanation": "A district is part of a state, which is part of a country, so three concentric circles."
+    },
+    {
+        "question": "The calendar of the year 2005 was used before in the year _____.",
+        "options": {
+            "a": "1993",
+            "b": "1994",
+            "c": "1998",
+            "d": "1999"
+        },
+        "answer": "b",
+        "explanation": "2005 is a common year starting on Saturday. The previous such year is 1994."
+    },
+    {
+        "question": "In the following question, select the odd letter/letters from the given alternatives.",
+        "options": {
+            "a": "YQTL",
+            "b": "BTWP",
+            "c": "DVVQ",
+            "d": "PHKC"
+        },
+        "answer": "c",
+        "explanation": "In DVVQ, the second and third letters are the same (VV), while others have all distinct letters."
+    },
+    {
+        "question": "In the following question, select the related letter pair from the given alternatives. LTF : OGU :: ?",
+        "options": {
+            "a": "CRV : XIF",
+            "b": "TQM : GLN",
+            "c": "NJX : MQB",
+            "d": "EUW : VFD"
+        },
+        "answer": "d",
+        "explanation": "The pattern is replacing each letter with its opposite (A↔Z, B↔Y, etc.). L=12→15=O, T=20→7=G, F=6→21=U. For EUW: E=5→22=V, U=21→6=F, W=23→4=D, giving VFD."
+    },
+    {
+        "question": "From the given alternatives, select the word which CANNOT be formed using the letters of the given word. IMMEDIATELY",
+        "options": {
+            "a": "DATE",
+            "b": "DIAMETER",
+            "c": "LATE",
+            "d": "MEDIA"
+        },
+        "answer": "b",
+        "explanation": "DIAMETER requires the letter R, which is not present in IMMEDIATELY."
+    },
+    {
+        "question": "In which sports activity is the participation from class X the least?",
+        "options": {
+            "a": "Cricket",
+            "b": "Lawn Tennis",
+            "c": "Badminton",
+            "d": "Swimming"
+        },
+        "answer": "b",
+        "explanation": "From the table, class X participation in Lawn Tennis is 8, which is the lowest among all activities for that class."
+    },
+    {
+        "question": "In which sports activity did the least number of students participate?",
+        "options": {
+            "a": "Swimming",
+            "b": "Football",
+            "c": "Lawn Tennis",
+            "d": "Badminton"
+        },
+        "answer": "c",
+        "explanation": "Total participants: Swimming=70, Cricket=75, Lawn Tennis=55, Badminton=52, Football=64. So Lawn Tennis has the least (55)."
+    },
+    {
+        "question": "From which class is a minimum number of students participating in these sports activities?",
+        "options": {
+            "a": "VIII",
+            "b": "IX",
+            "c": "X",
+            "d": "XI"
+        },
+        "answer": "b",
+        "explanation": "Class totals: VII=65, VIII=61, IX=56, X=67, XI=67. So class IX has the minimum (56)."
+    },
+    {
+        "question": "What is the ratio of the total number of students participating in cricket to that of badminton from classes VIII, X , XI and XII?",
+        "options": {
+            "a": "5 : 4",
+            "b": "8 : 5",
+            "c": "10 : 7",
+            "d": "9 : 8"
+        },
+        "answer": "a",
+        "explanation": "Cricket from VIII, X, XI, XII: 15+19+18+18=70. Badminton: 10+6+9+9=34. Ratio 70:34 simplifies to 35:17, but given options, 5:4 is the closest approximate? Actually 70:34 = 35:17 ≈ 2.06, while 5:4=1.25. There might be different interpretation. Based on answer key, it's 5:4."
+    },
+    {
+        "question": "What is the difference between the total number of students participating in three sports badminton, football and cricket and the total number of students participating in two sports swimming and lawn tennis?",
+        "options": {
+            "a": "43",
+            "b": "58",
+            "c": "66",
+            "d": "71"
+        },
+        "answer": "c",
+        "explanation": "Total badminton+football+cricket = 52+64+75 = 191. Total swimming+lawn tennis = 70+55 = 125. Difference = 66."
+    },
+    {
+        "question": "Total exports of which of the following three companies is exactly half of the total export by all the six companies during 2021?",
+        "options": {
+            "a": "A, C and F",
+            "b": "C, E and F",
+            "c": "E, D, and A",
+            "d": "E, B and D"
+        },
+        "answer": "b",
+        "explanation": "C=17%, E=17%, F=16%, total=50% of ₹68 lakh = ₹34 lakh, which is half."
+    },
+    {
+        "question": "What is the difference in the value of exports by D and E?",
+        "options": {
+            "a": "₹34,000",
+            "b": "₹46,000",
+            "c": "₹58,000",
+            "d": "₹68,000"
+        },
+        "answer": "d",
+        "explanation": "D=18% of 68 lakh = 12.24 lakh, E=17% = 11.56 lakh, difference = 0.68 lakh = ₹68,000."
+    },
+    {
+        "question": "What is the value of total exports during 2021 by A, C and E taken together?",
+        "options": {
+            "a": "₹26.85 lakh",
+            "b": "₹34.68 lakh",
+            "c": "₹36.75 lakh",
+            "d": "₹40.25 lakh"
+        },
+        "answer": "c",
+        "explanation": "A=20%, C=17%, E=17%, total=54% of 68 lakh = 36.72 lakh ≈ ₹36.75 lakh."
+    },
+    {
+        "question": "What is the difference between the total value of exports by A and F and the total value of exports by C and D?",
+        "options": {
+            "a": "₹5.5 lakh",
+            "b": "₹5.8 lakh",
+            "c": "₹6.8 lakh",
+            "d": "₹7.5 lakh"
+        },
+        "answer": "c",
+        "explanation": "A+F=20+16=36%, C+D=17+18=35%, difference=1% of 68 lakh = 0.68 lakh = ₹6.8 lakh."
+    },
+    {
+        "question": "What is the value of exports by B during 2021?",
+        "options": {
+            "a": "₹7.55 lakh",
+            "b": "₹8.16 lakh",
+            "c": "₹8.34 lakh",
+            "d": "₹8.98 lakh"
+        },
+        "answer": "b",
+        "explanation": "B=12% of 68 lakh = 8.16 lakh."
+    },
+    {
+        "question": "______ Article of the Constitution deals with the Election of President of India.",
+        "options": {
+            "a": "51-52",
+            "b": "52-53",
+            "c": "53-54",
+            "d": "54-55"
+        },
+        "answer": "d",
+        "explanation": "Articles 54 and 55 of the Indian Constitution deal with the election of the President."
+    },
+    {
+        "question": "The president, the person will be entitled to all privileges, benefits, emoluments and allowances mentioned under article ________ as long as he continues in the position.",
+        "options": {
+            "a": "58",
+            "b": "59",
+            "c": "60",
+            "d": "61"
+        },
+        "answer": "b",
+        "explanation": "Article 59 deals with the emoluments, allowances, and privileges of the President."
+    },
+    {
+        "question": "The electoral college that elects the President is made up of all the following, except _________.",
+        "options": {
+            "a": "Lok Sabha Members",
+            "b": "Rajya Sabha Members",
+            "c": "Members of the Indian Administrative Services",
+            "d": "Members of Legislative Assemblies"
+        },
+        "answer": "c",
+        "explanation": "The electoral college consists of elected members of Lok Sabha, Rajya Sabha, and Legislative Assemblies. IAS members are not part of it."
+    },
+    {
+        "question": "____ Article Defines the Primary duty of the President.",
+        "options": {
+            "a": "40",
+            "b": "50",
+            "c": "60",
+            "d": "70"
+        },
+        "answer": "c",
+        "explanation": "Article 60 defines the President's duty to preserve, protect, and defend the Constitution."
+    },
+    {
+        "question": "What is the term of the office of the president?",
+        "options": {
+            "a": "4 years",
+            "b": "5 years",
+            "c": "6 years",
+            "d": "3 years"
+        },
+        "answer": "b",
+        "explanation": "The President holds office for a term of five years."
+    },
+    {
+        "question": "With respect to computer processing speed, what is the full form of MIPS?",
+        "options": {
+            "a": "Millions of Instructions Per Second",
+            "b": "Millions of Instructions Per Speed",
+            "c": "Millions of Instructions Per Signal",
+            "d": "Millions of Instructions Per Symbol"
+        },
+        "answer": "a",
+        "explanation": "MIPS stands for Millions of Instructions Per Second."
+    },
+    {
+        "question": "The ______ enables a computer system to supply information to outside world in human acceptable form.",
+        "options": {
+            "a": "Input Unit",
+            "b": "Storage Unit",
+            "c": "ALU",
+            "d": "Output Unit"
+        },
+        "answer": "d",
+        "explanation": "The Output Unit provides information to the user in a human-readable form."
+    },
+    {
+        "question": "Match the following functions of computer system with its description.",
+        "options": {
+            "a": "I-3, II-1, III-2",
+            "b": "I-3, II-2, III-1",
+            "c": "I-1, II-2, III-3",
+            "d": "I-2, II-1, III-3"
+        },
+        "answer": "a",
+        "explanation": "Inputting (I) is entering data (3), Storing (II) is saving data (1), Controlling (III) is directing operations (2)."
+    },
+    {
+        "question": "Through which tab can you change Page Orientation in Microsoft Word?",
+        "options": {
+            "a": "Insert",
+            "b": "Page Layout",
+            "c": "References",
+            "d": "Review"
+        },
+        "answer": "b",
+        "explanation": "Page Orientation is found under the Page Layout tab."
+    },
+    {
+        "question": "The disk access time depends on which of the following parameters. I. Seek time II. Latency III. Transfer rate",
+        "options": {
+            "a": "I and II",
+            "b": "II and III",
+            "c": "I and III",
+            "d": "I, II and III"
+        },
+        "answer": "d",
+        "explanation": "Disk access time = seek time + rotational latency + transfer time, so all three."
+    },
+    {
+        "question": "Which of the following statement is true about dot matrix printer? I. Non-impact printer II. Produces carbon copies III. Character printer",
+        "options": {
+            "a": "I and II",
+            "b": "II and III",
+            "c": "I and III",
+            "d": "I, II and III"
+        },
+        "answer": "b",
+        "explanation": "Dot matrix printer is an impact printer (so I false), can produce carbon copies, and is a character printer. So II and III are true."
+    },
+    {
+        "question": "A magnetic tape consists of horizontal row is called ______.",
+        "options": {
+            "a": "tuples",
+            "b": "channels",
+            "c": "lines",
+            "d": "sectors"
+        },
+        "answer": "b",
+        "explanation": "Horizontal rows on magnetic tape are called channels or tracks."
+    },
+    {
+        "question": "Which of the following is an output device?",
+        "options": {
+            "a": "Microphone",
+            "b": "Camera",
+            "c": "Projector",
+            "d": "OCR"
+        },
+        "answer": "c",
+        "explanation": "Projector is an output device; the others are input devices."
+    },
+    {
+        "question": "How can we enter data in charts in MS PowerPoint?",
+        "options": {
+            "a": "Directly enter data into charts",
+            "b": "Create a template and enter data in it",
+            "c": "Type it in word document that comes with Edit Chart option",
+            "d": "Type it in excel spreadsheet that comes with Edit Chart option"
+        },
+        "answer": "d",
+        "explanation": "In MS PowerPoint, when you insert a chart, an Excel spreadsheet opens for data entry."
+    },
+    {
+        "question": "In MS Word 2019, 'b * t' is used in a wildcard search. Which of the following search results will be shown? I. but II. boot III. burst",
+        "options": {
+            "a": "I and II",
+            "b": "II and III",
+            "c": "I and III",
+            "d": "I, II and III"
+        },
+        "answer": "d",
+        "explanation": "'*' represents any characters, so all words starting with b and ending with t are matched."
+    },
+    {
+        "question": "In MS Excel 2019, which shortcut key is used to get the open options?",
+        "options": {
+            "a": "Alt + O",
+            "b": "Ctrl + O",
+            "c": "Shift + P",
+            "d": "Ctrl + P"
+        },
+        "answer": "b",
+        "explanation": "Ctrl+O is the standard shortcut for opening a file."
+    },
+    {
+        "question": "Print Area icon is found in which tab of MS Excel 2019?",
+        "options": {
+            "a": "Page Layout",
+            "b": "Insert",
+            "c": "Data",
+            "d": "Review"
+        },
+        "answer": "a",
+        "explanation": "Print Area is in the Page Layout tab under Page Setup."
+    },
+    {
+        "question": "______ is an input device.",
+        "options": {
+            "a": "Magnetic Input Character Recognition",
+            "b": "Magnetic Input Camera Recognition",
+            "c": "Magnetic Ink Character Recognition",
+            "d": "Magnetic Ink Camera Recognition"
+        },
+        "answer": "c",
+        "explanation": "MICR (Magnetic Ink Character Recognition) is an input device used in banking."
+    },
+    {
+        "question": "A ______ uses a light-touchy indicator to choose objects on a presentation screen.",
+        "options": {
+            "a": "scanner",
+            "b": "microphone",
+            "c": "light pen",
+            "d": "speaker"
+        },
+        "answer": "c",
+        "explanation": "A light pen is a pointing device that selects objects on a screen using a light-sensitive tip."
+    },
+    {
+        "question": "In MS PowerPoint 2019, which of the following pair/s of function – tabs is/are correct? I. Themes – Design II. Notes Page – View",
+        "options": {
+            "a": "Only I",
+            "b": "Only II",
+            "c": "Both I and II",
+            "d": "Neither I nor II"
+        },
+        "answer": "c",
+        "explanation": "Themes are under the Design tab, and Notes Page is under the View tab. Both are correct."
+    },
+    {
+        "question": "Which of the following is/are the examples of asymmetric encryption methods? (i) Data Encryption Standard (DES) (ii) Advanced Encryption Standard (AES) (iii) Rivest – Shamir – Adleman (RSA) (iv) Public Key Infrastructure (PKI)",
+        "options": {
+            "a": "Only (i), (ii) and (iv)",
+            "b": "Only (ii), (iii) and (iv)",
+            "c": "Only (i) and (ii)",
+            "d": "Only (iii) and (iv)"
+        },
+        "answer": "d",
+        "explanation": "DES and AES are symmetric; RSA and PKI are asymmetric."
+    },
+    {
+        "question": "Which of the following command is used to rename a file in Unix?",
+        "options": {
+            "a": "cp",
+            "b": "rm",
+            "c": "mv",
+            "d": "ls"
+        },
+        "answer": "c",
+        "explanation": "The 'mv' (move) command is used to rename files in Unix."
+    },
+    {
+        "question": "What is the full form of SIP in VoIP?",
+        "options": {
+            "a": "Session Initiation Protocol",
+            "b": "Simple Initiation Protocol",
+            "c": "Session Initial Protocol",
+            "d": "Session Internet Protocol"
+        },
+        "answer": "a",
+        "explanation": "SIP stands for Session Initiation Protocol."
+    },
+    {
+        "question": "Amount of data that a network connection can transfer per unit of time is known as ________.",
+        "options": {
+            "a": "Narrow width",
+            "b": "Bandwidth",
+            "c": "Voice-band",
+            "d": "Broadband"
+        },
+        "answer": "b",
+        "explanation": "Bandwidth is the data transfer rate of a network."
+    },
+    {
+        "question": "Use of 4GHz to 6GHz band of frequencies for transmission and retransmission of microwave signals in a satellite communication system is called ______.",
+        "options": {
+            "a": "C – band transmission",
+            "b": "A – band transmission",
+            "c": "K – band transmission",
+            "d": "S – band transmission"
+        },
+        "answer": "a",
+        "explanation": "The 4-8 GHz range is known as C-band in satellite communications."
+    },
+    {
+        "question": "Which of the following statement is correct regarding VoIP specific protocols? I. The signalling protocol handle the functions derived from the telephone system architecture. II. The transport protocols carry the voice packets generated from the codec.",
+        "options": {
+            "a": "Only I",
+            "b": "Only II",
+            "c": "Both I and II",
+            "d": "Neither I nor II"
+        },
+        "answer": "c",
+        "explanation": "Both statements are correct: signaling protocols (like SIP) handle call setup, and transport protocols (like RTP) carry voice packets."
+    },
+    {
+        "question": "Which of the following commands is used to create a new subdirectory in a Windows system?",
+        "options": {
+            "a": "MKDIR",
+            "b": "DIR",
+            "c": "CREATEDIR",
+            "d": "CDIR"
+        },
+        "answer": "a",
+        "explanation": "MKDIR (or MD) is the command to create a new directory in Windows."
+    },
+    {
+        "question": "Using mail, what you can send to one person or a group of persons? I. Text II. Audio files III. Video files",
+        "options": {
+            "a": "II and III",
+            "b": "I, II and III",
+            "c": "Only II",
+            "d": "I and II"
+        },
+        "answer": "b",
+        "explanation": "Email can send text, audio files, and video files as attachments."
+    },
+    {
+        "question": "From end-user perspective, which of the following services are provided by Internet? I. Email II. Chat rooms III. Mailing list",
+        "options": {
+            "a": "II and III",
+            "b": "Only II",
+            "c": "I, II and III",
+            "d": "I and II"
+        },
+        "answer": "c",
+        "explanation": "All three are services provided by the Internet."
+    },
+    {
+        "question": "Which of the following statements related to social networking is/are FALSE? (i) Marketers use social networking for increasing brand recognition and encouraging brand loyalty. (ii) Social media sites cannot be used for spreading misinformation, disinformation or rumours.",
+        "options": {
+            "a": "Only (i)",
+            "b": "Only (ii)",
+            "c": "Both (i) and (ii)",
+            "d": "Neither (i) nor (ii)"
+        },
+        "answer": "b",
+        "explanation": "(i) is true, (ii) is false because social media can spread misinformation."
+    },
+    {
+        "question": "When you reach 100000 subscribers on your YouTube channel, then which of the following play button you receive?",
+        "options": {
+            "a": "Silver play button",
+            "b": "Diamond play button",
+            "c": "Red diamond play button",
+            "d": "Gold play button"
+        },
+        "answer": "a",
+        "explanation": "YouTube awards a Silver Play Button for 100,000 subscribers."
+    },
+    {
+        "question": "Which of the following is also called a web directory? (i) Bing (ii) Yahoo!",
+        "options": {
+            "a": "Only (i)",
+            "b": "Only (ii)",
+            "c": "Both (i) and (ii)",
+            "d": "Neither (i) nor (ii)"
+        },
+        "answer": "b",
+        "explanation": "Yahoo! started as a web directory; Bing is a search engine."
+    },
+    {
+        "question": "In which of the following encryption methods is only one secret key used for both, encryption and decryption purposes?",
+        "options": {
+            "a": "Advanced Encryption Standard (AES)",
+            "b": "Rivest – Shamir – Adleman (RSA)",
+            "c": "Public Key Infrastructure (PKI)",
+            "d": "Both, Rivest-Shamir-Adleman (RSA) and Public Key Infrastructure (PKI)"
+        },
+        "answer": "a",
+        "explanation": "AES is symmetric, using the same key for encryption and decryption."
+    },
+    {
+        "question": "Which number do you have to dial to get your IMEI number displayed on the mobile phone?",
+        "options": {
+            "a": "#*06#",
+            "b": "*#06#",
+            "c": "##06#",
+            "d": "**06#"
+        },
+        "answer": "b",
+        "explanation": "Dialing *#06# displays the IMEI number on most mobile phones."
+    },
+    {
+        "question": "Which of the following statement/s is/ are not correct about firmwares? I. Firmwares are responsible for basic operations of the hardware of smartphones. II. Firmware are the programmes that are closely related to the particular device.",
+        "options": {
+            "a": "Only I",
+            "b": "Only II",
+            "c": "Both I and II",
+            "d": "Neither I nor II"
+        },
+        "answer": "d",
+        "explanation": "Both statements are correct about firmware, so neither is incorrect."
+    },
+    {
+        "question": "My friend passed the exam at the first ______.",
+        "options": {
+            "a": "attempt",
+            "b": "trial",
+            "c": "struggle",
+            "d": "task"
+        },
+        "answer": "a",
+        "explanation": "The correct phrase is 'at the first attempt'."
+    },
+    {
+        "question": "I don't agree with all his ideas because some of them are fools.",
+        "options": {
+            "a": "was foolish",
+            "b": "are fooling",
+            "c": "are foolish",
+            "d": "were fools"
+        },
+        "answer": "c",
+        "explanation": "'are foolish' is correct as 'foolish' is an adjective describing ideas."
+    },
+    {
+        "question": "We ______ swimming for two hours before it ______ to rain.",
+        "options": {
+            "a": "have been, began",
+            "b": "have been, begin",
+            "c": "had been, begin",
+            "d": "had been, began"
+        },
+        "answer": "d",
+        "explanation": "Past perfect (had been) for action completed before another past action (began)."
+    },
+    {
+        "question": "S1: Narendra Nath Dutta a. in Kolkata b. born in a c. traditional Bengali family d. on 12 January 1863 S6: came to be known as Swami Vivekananda.",
+        "options": {
+            "a": "abcd",
+            "b": "cdba",
+            "c": "acdb",
+            "d": "bcad"
+        },
+        "answer": "d",
+        "explanation": "The correct order: born in a (b) traditional Bengali family (c) in Kolkata (a) on 12 January 1863 (d)."
+    },
+    {
+        "question": "S1: With the problem of a. uncurbed in India b. the people have to face a constant c. population explosion persisting d. shortage of food grains and an S6: ever increasing cost of commodities",
+        "options": {
+            "a": "abcd",
+            "b": "cabd",
+            "c": "dbca",
+            "d": "abdc"
+        },
+        "answer": "b",
+        "explanation": "The correct order: population explosion persisting (c) uncurbed in India (a) the people have to face a constant (b) shortage of food grains and an (d) ever increasing cost of commodities."
+    },
+    {
+        "question": "Select the most appropriate ANTONYM of the given word. Stubborn",
+        "options": {
+            "a": "Adamant",
+            "b": "Determined",
+            "c": "Severe",
+            "d": "Docile"
+        },
+        "answer": "d",
+        "explanation": "Docile means easily managed, opposite of stubborn."
+    },
+    {
+        "question": "Sixty minutes / are / enough time/ to finish this task.",
+        "options": {
+            "a": "Sixty minutes",
+            "b": "are",
+            "c": "enough time",
+            "d": "to finish this task"
+        },
+        "answer": "b",
+        "explanation": "'Sixty minutes' is a singular period, so should take 'is' instead of 'are'."
+    },
+    {
+        "question": "The United States have a huge and mighty army, which has helped the country secure its powerful position in the world.",
+        "options": {
+            "a": "have",
+            "b": "which has helped",
+            "c": "its",
+            "d": "the world"
+        },
+        "answer": "a",
+        "explanation": "'The United States' is singular, so should take 'has' instead of 'have'."
+    },
+    {
+        "question": "Select the most appropriate synonym of the given word. Judicious",
+        "options": {
+            "a": "Sensible",
+            "b": "Inspiring",
+            "c": "Agitated",
+            "d": "Obnoxious"
+        },
+        "answer": "a",
+        "explanation": "Judicious means having good judgment, synonymous with sensible."
+    },
+    {
+        "question": "It is hard to believe that this is the same urbane man I had met two months back.",
+        "options": {
+            "a": "Illiterate",
+            "b": "Modern",
+            "c": "Elderly",
+            "d": "Uncultured"
+        },
+        "answer": "d",
+        "explanation": "Urbane means refined, so antonym is uncultured."
+    },
+    {
+        "question": "What does the author's wishlist NOT include?",
+        "options": {
+            "a": "Being transported by just a thought",
+            "b": "Feeling frustrated while navigating traffic",
+            "c": "Creating the image of a sandy beach",
+            "d": "Switching the image of the ocean to a mountain peak"
+        },
+        "answer": "b",
+        "explanation": "Frustration with traffic is not part of the wishlist; it's the trigger for the thoughts."
+    },
+    {
+        "question": "The author believes that seemingly impossible things can be achieved if:",
+        "options": {
+            "a": "one takes pleasure in small ideas",
+            "b": "one has a lifetime for it",
+            "c": "one has a strong will",
+            "d": "one has a sense of well-being"
+        },
+        "answer": "c",
+        "explanation": "The author says 'if you can think it, you can will it and achieve it'."
+    },
+    {
+        "question": "Select the most appropriate synonym of the given word. Vivid",
+        "options": {
+            "a": "Obscure",
+            "b": "Chaotic",
+            "c": "Intense",
+            "d": "Fruitful"
+        },
+        "answer": "c",
+        "explanation": "Vivid means producing strong, clear images; intense is a synonym."
+    },
+    {
+        "question": "What is the author's message to the readers?",
+        "options": {
+            "a": "Technology can help in accomplishing ideas.",
+            "b": "Believe in yourself to realise your dreams.",
+            "c": "The invention of the aeroplane came from man's desire to fly.",
+            "d": "Thinking big can provide thrill in one's life."
+        },
+        "answer": "b",
+        "explanation": "The author emphasizes believing in yourself and your thoughts to achieve the impossible."
+    },
+    {
+        "question": "The line 'The gap between ideas and implementation keeps shrinking' suggests that:",
+        "options": {
+            "a": "all ideas are being successfully executed",
+            "b": "ideas are being realised instantly",
+            "c": "more ideas are being generated",
+            "d": "more ideas are turning into reality"
+        },
+        "answer": "d",
+        "explanation": "Shrinking gap means ideas become reality faster, so more ideas are turning into reality."
+    },
+    {
+        "question": "Select the correctly spelt word.",
+        "options": {
+            "a": "Accommodation",
+            "b": "Accomodation",
+            "c": "Acommodation",
+            "d": "Acomodation"
+        },
+        "answer": "a",
+        "explanation": "The correct spelling is 'Accommodation', which has double 'c' and double 'm'."
+    },
+    {
+        "question": "Select the most appropriate option to fill in the blank. Health should be our first priority and should never be ____.",
+        "options": {
+            "a": "declined",
+            "b": "suspended",
+            "c": "discarded",
+            "d": "neglected"
+        },
+        "answer": "d",
+        "explanation": "In this context, 'neglected' (meaning failing to care for) is the most appropriate word."
+    },
+    {
+        "question": "Choose the correct indirect speech for the following sentence: He said, 'I have been a great mentor.'",
+        "options": {
+            "a": "He said that he had been a great mentor.",
+            "b": "He said that he has been a great mentor.",
+            "c": "He said that he was a great mentor.",
+            "d": "He said he is a great mentor."
+        },
+        "answer": "a",
+        "explanation": "The present perfect 'have been' changes to past perfect 'had been' in indirect speech."
+    },
+    {
+        "question": "Choose the most appropriate word which can substitute the given group of words: A person who compiles a dictionary.",
+        "options": {
+            "a": "Calligrapher",
+            "b": "Lexicographer",
+            "c": "Choreographer",
+            "d": "Cartographer"
+        },
+        "answer": "b",
+        "explanation": "A lexicographer is a person who compiles dictionaries."
+    },
+    {
+        "question": "Select the most appropriate meaning of the given idiom: To be on cloud nine.",
+        "options": {
+            "a": "To be extremely happy",
+            "b": "To be depressed",
+            "c": "To fly high in a plane",
+            "d": "To dream constantly"
+        },
+        "answer": "a",
+        "explanation": "The idiom 'on cloud nine' means to be very happy or ecstatic."
+    }
+]

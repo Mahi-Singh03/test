@@ -1,0 +1,36 @@
+{
+    "title": "Punjab Police Sub-Inspector",
+    "year": "2024",
+    "date": "January 15",
+    "duration": 120,
+    "totalQuestions": 100,
+    "sections": [
+        {
+            "id": "section-1",
+            "name": "Section 1",
+            "subject": "General Awareness",
+            "icon": "🌍",
+            "startIndex": 0,
+            "endIndex": 49,
+            "totalQuestions": 50
+        },
+        {
+            "id": "section-2",
+            "name": "Section 2",
+            "subject": "Quantitative Aptitude & Numerical Skills",
+            "icon": "🔢",
+            "startIndex": 50,
+            "endIndex": 79,
+            "totalQuestions": 30
+        },
+        {
+            "id": "section-3",
+            "name": "Section 3",
+            "subject": "Punjabi Language",
+            "icon": "📖",
+            "startIndex": 80,
+            "endIndex": 99,
+            "totalQuestions": 20
+        }
+    ]
+}

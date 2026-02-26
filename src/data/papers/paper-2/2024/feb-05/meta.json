@@ -1,0 +1,36 @@
+{
+    "title": "Sub-Inspector Paper 2",
+    "year": "2024",
+    "date": "February 5",
+    "duration": 120,
+    "totalQuestions": 100,
+    "sections": [
+        {
+            "id": "section-1",
+            "name": "Section 1",
+            "subject": "Logical Reasoning",
+            "icon": "🧠",
+            "startIndex": 0,
+            "endIndex": 49,
+            "totalQuestions": 50
+        },
+        {
+            "id": "section-2",
+            "name": "Section 2",
+            "subject": "Digital Literacy",
+            "icon": "💻",
+            "startIndex": 50,
+            "endIndex": 79,
+            "totalQuestions": 30
+        },
+        {
+            "id": "section-3",
+            "name": "Section 3",
+            "subject": "English Language",
+            "icon": "📖",
+            "startIndex": 80,
+            "endIndex": 99,
+            "totalQuestions": 20
+        }
+    ]
+}
